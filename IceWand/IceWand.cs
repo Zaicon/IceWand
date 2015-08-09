@@ -10,7 +10,7 @@ using TShockAPI;
 
 namespace IceWand
 {
-	[ApiVersion(1, 20)]
+	[ApiVersion(1, 21)]
 	public class IceWand : TerrariaPlugin
 	{
 		List<IceWandAction> Actions = new List<IceWandAction>();

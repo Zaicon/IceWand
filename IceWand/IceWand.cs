@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+ * Credit to MarioE for the original plugin.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -10,7 +14,7 @@ using TShockAPI;
 
 namespace IceWand
 {
-	[ApiVersion(1, 21)]
+	[ApiVersion(1, 22)]
 	public class IceWand : TerrariaPlugin
 	{
 		List<IceWandAction> Actions = new List<IceWandAction>();
@@ -19,7 +23,7 @@ namespace IceWand
 
 		public override string Author
 		{
-			get { return "MarioE"; }
+			get { return "Zaicon"; }
 		}
 		public override string Description
 		{

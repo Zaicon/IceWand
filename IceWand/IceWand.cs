@@ -5,7 +5,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 using System.Text;
 using Terraria;
@@ -14,7 +13,7 @@ using TShockAPI;
 
 namespace IceWand
 {
-	[ApiVersion(1, 22)]
+    [ApiVersion(1, 23)]
 	public class IceWand : TerrariaPlugin
 	{
 		List<IceWandAction> Actions = new List<IceWandAction>();
@@ -174,7 +173,7 @@ namespace IceWand
 		}
 		void Honey(object sender, IceWandEventArgs e)
 		{
-			Main.tile[e.X, e.Y].liquidType(2);
+			Main.tile[e.X, e.Y].liquidType((byte)2);
 			Main.tile[e.X, e.Y].liquid = 255;
 			WorldGen.SquareTileFrame(e.X, e.Y);
 			TSPlayer.All.SendTileSquare(e.X, e.Y, 1);
@@ -185,7 +184,7 @@ namespace IceWand
 		}
 		void Lava(object sender, IceWandEventArgs e)
 		{
-			Main.tile[e.X, e.Y].liquidType(1);
+			Main.tile[e.X, e.Y].liquidType((byte)1);
 			Main.tile[e.X, e.Y].liquid = 255;
 			WorldGen.SquareTileFrame(e.X, e.Y);
 			TSPlayer.All.SendTileSquare(e.X, e.Y, 1);
@@ -217,7 +216,7 @@ namespace IceWand
 		}
 		void Water(object sender, IceWandEventArgs e)
 		{
-			Main.tile[e.X, e.Y].liquidType(0);
+			Main.tile[e.X, e.Y].liquidType((byte)0);
 			Main.tile[e.X, e.Y].liquid = 255;
 			WorldGen.SquareTileFrame(e.X, e.Y);
 			TSPlayer.All.SendTileSquare(e.X, e.Y, 1);

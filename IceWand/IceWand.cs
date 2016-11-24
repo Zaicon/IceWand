@@ -13,7 +13,7 @@ using TShockAPI;
 
 namespace IceWand
 {
-    [ApiVersion(1, 25)]
+    [ApiVersion(1, 26)]
 	public class IceWand : TerrariaPlugin
 	{
 		List<IceWandAction> Actions = new List<IceWandAction>();
@@ -72,8 +72,8 @@ namespace IceWand
 
 					if (type == 127 && ActionTypes[e.Msg.whoAmI] != 0)
 					{
-						if (WorldGen.genRand == null)
-							WorldGen.genRand = new Random();
+//						if (WorldGen.genRand == null)
+//							WorldGen.genRand = new UnifiedRandom();
 
 						Actions[ActionTypes[e.Msg.whoAmI]].callback.Invoke(null,
 							new IceWandEventArgs(x, y, TShock.Players[e.Msg.whoAmI], ActionData[e.Msg.whoAmI]));
